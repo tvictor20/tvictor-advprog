@@ -1,11 +1,13 @@
-def main():
+import sys
+
+def fib(n):
     x, y, z = 0, 1, 1
     print x
     print y
-    for i in range(100):
+    for i in range(0,n-2):
         z = x + y
-        x = y
-        y = z
+        x, y = y, z
         print z
 
-main()
+if __name__ == "__main__":
+    fib(int(sys.argv[1]))
