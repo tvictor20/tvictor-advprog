@@ -10,28 +10,36 @@ class Student():
         Student.counter += 1
 
 studentList = []
-tommy = Student("Tommy", "Victor", "male")
-studentList.append(tommy)
-ben = Student("Ben", "Rosin", "male")
-studentList.append(ben)
+studentList.append(Student("Tommy", "Victor", "male"))
+
+studentList.append(Student("Ben", "Rosin", "male"))
 
 def main():
-    while True:
-        print "There are " + str(tommy.counter) + " students in the directory"
+    running = 1
+    while running == 1:
+        print "There are " + str(studentList[0].counter) + " students in the directory"
         print "Press 1 to see everyone in the directory"
         print "Press 2 to add someone to the directory"
-        x = input()
+        print "Press 3 to close"
+        try:
+            x = input()
+        except NameError:
+            print "Invalid input"
+            x = 4
         print ""
         if x == 1:
             for i in studentList:
                 print i.name + " " + i.lastName
+            print ""
 
         if x == 2:
             fname = raw_input("What is their first name? ")
             lname = raw_input("What is their last name? ")
             gender = raw_input("What is their gender?")
-            fname = Student(fname, lname, gender)
+            studentList.append(Student(fname, lname, gender))
 
+        if x == 3:
+            running = 0
 
 
 main()
