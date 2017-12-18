@@ -42,11 +42,13 @@ def main():
 
         if x == 3:
             g = 0
-            while g = 0:
+            while g == 0:
                 print "Which account do you want to withdraw from?"
                 x = raw_input()
-                if 
-            while g = 0:
+                for i in accountList:
+                    if x == i.name:
+                        print "success"
+            while g == 0:
                 try:
                     print "How much would you like to deposit?"
                     x = input()
