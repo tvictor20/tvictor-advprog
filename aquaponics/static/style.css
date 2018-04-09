@@ -1,0 +1,24 @@
+body {
+  font: monospace;
+  margin: 0px;
+  padding: 0px;
+  background: linen;
+}
+
+div.reading_div {
+  margin: 32px;
+  background: rgb(0, 127, 255);
+}
+
+p.reading {
+  font-size: 24px;
+}
+
+p.aux_info {
+  font-size: 12px;
+}
+
+p.aux_info::before {
+  /* 4 non-breaking spaces */
+  content: "\00a0\00a0\00a0\00a0"
+}
